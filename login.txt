@@ -1,0 +1,2 @@
+mysql -u nemosha1_tcadmin -p
+USE nemosha1_timeclock;

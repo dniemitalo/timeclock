@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name=viewport content="width=device-width">
+	<link rel="stylesheet" type="text/css" href="timeclock.css">
+	<script src="register.js"></script>
+</head>
+<body>
+<h1 class="title">Registration</h1>
+<div class="main">
+	<form name="regForm" action="register.php" onsubmit="return validateForm()" method="post">
+	LM User ID: <input type="text" id="idfield" name="ID" maxlength="10" size="10"><br>
+	First Name: <input type="text" name="first"><br>
+	Last Name: <input type="text" name="last"><br>
+	<input type="submit"> 
+	</form>
+</div>
+</body>
+</html>

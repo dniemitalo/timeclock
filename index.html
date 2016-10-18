@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name=viewport content="width=device-width">
+	<link rel="stylesheet" type="text/css" href="timeclock.css">
+	<script src="timeclock.js"></script>
+</head>
+<body>
+<div class="title"><h1>Robotics Time Clock</h1></div>
+<div class="main">
+<form name = "punchForm" action="punch.php" onsubmit="return validateForm()" method="post">
+	<div class="center">
+	<span>ID#:</span>
+	<input type="text" id="idfield" name="ID" maxlength="10" size="10">
+	<input type="submit">
+	</div>
+</form>
+</div>
+<div class="divbutton"><a class="clickable" href="http://www.nemoquiz.com/timeclock/report.php">Hours Report</a></div>
+</body>
+</html>

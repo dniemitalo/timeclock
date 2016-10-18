@@ -1,0 +1,15 @@
+#Get a list of all of the hours entries for every student:
+SELECT last, first, hours FROM hours JOIN students ON hours.ID = students.ID;
+
+#Get total hours for a student:
+SELECT SUM(hours) FROM hours WHERE ID=123456;
+
+#Get list of total hours for every ID:
+SELECT ID, SUM(hours) AS sum FROM hours GROUP BY ID;
+SELECT last, SUM(hours) AS sum FROM hours GROUP BY ID;
+
+#Get a list of student first and last names and hours:
+SELECT last, first, SUM(hours) as sum FROM hours 
+JOIN students ON hours.ID = students.ID 
+GROUP BY hours.ID 
+ORDER BY students.last;
