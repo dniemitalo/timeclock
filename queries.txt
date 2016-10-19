@@ -13,3 +13,16 @@ SELECT last, first, SUM(hours) as sum FROM hours
 JOIN students ON hours.ID = students.ID 
 GROUP BY hours.ID 
 ORDER BY students.last;
+
+#Update CoC for a batch of students:
+#In this case all of the records being updated are receiving the same value so it is simpler.
+UPDATE students SET CoC="Y" WHERE id in (330409,330408,330407,405681,9624,427627,511475);
+
+#Update team for a batch of students:
+#Use a case structure to assign different values to different people.
+UPDATE students SET team = CASE id 
+      WHEN 360049 THEN 967 
+      WHEN 390453 THEN 4150
+      WHEN 9528 THEN 10107
+    END
+     WHERE id IN (360049,390453,9528);

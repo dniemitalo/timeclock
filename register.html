@@ -9,10 +9,16 @@
 <h1 class="title">Registration</h1>
 <div class="main">
 	<form name="regForm" action="register.php" onsubmit="return validateForm()" method="post">
-	LM User ID: <input type="text" id="idfield" name="ID" maxlength="10" size="10"><br>
-	First Name: <input type="text" name="first"><br>
-	Last Name: <input type="text" name="last"><br>
-	<input type="submit"> 
+		LM User ID: <input type="text" id="idfield" name="ID" maxlength="10" size="10"><br>
+		First Name: <input type="text" name="first"><br>
+		Last Name: <input type="text" name="last"><br>
+		LMR Team: 
+		<select name="team">
+			<option value="967">967 Iron Lions</option>
+			<option value="4150">4150 Dark Matter</option>
+			<option value="4324">4324 Lost in Time</option>
+			<option value="10107">10107 A League of Their Own</option>
+		</select>
 	</form>
 </div>
 </body>
