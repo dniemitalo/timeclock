@@ -4,10 +4,12 @@ require_once 'db.php';
 ?>
 <html>
 <head>
-<meta http-equiv="refresh" content="5;URL=http://www.nemoquiz.com/timeclock">
+	<meta http-equiv="refresh" content="5;URL=http://www.nemoquiz.com/timeclock">
+	<link rel="stylesheet" type="text/css" href="timeclock.css">
 </head>
 <body>
-<h1>Time Clock User Registration</h1>
+<div class="title"><h1>Robotics Time Clock</h1></div>
+<div class="main">
 <?php
 $sql = "INSERT INTO students (ID, first, last) VALUES ($_POST[ID],'$_POST[first]','$_POST[last]')";
 if ($result = mysqli_query($conn,$sql)){
@@ -23,7 +25,7 @@ else{
 	echo mysqli_error($conn);
 }
 ?>
-
+</div>
 </body>
 </html>
 
