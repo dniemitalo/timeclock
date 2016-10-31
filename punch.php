@@ -2,7 +2,7 @@
 <?php require_once 'db.php'; ?>
 <html>
 <head>
-	<meta http-equiv="refresh" content="5;URL=http://www.nemoquiz.com/timeclock">
+	<meta http-equiv="refresh" content="3;URL=http://www.nemoquiz.com/timeclock">
 	<meta name=viewport content="width=device-width">
 	<link rel="stylesheet" type="text/css" href="timeclock.css">
 </head>
