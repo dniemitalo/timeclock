@@ -26,3 +26,18 @@ UPDATE students SET team = CASE id
       WHEN 9528 THEN 10107
     END
      WHERE id IN (360049,390453,9528);
+
+#Get hours from the last 10 days
+select ID, hours, DATE(date) from hours WHERE date > NOW() - INTERVAL 10 DAY;
+
+#Get hours from the last 30 days with first and last names instead of ID
+SELECT last, first, SUM(hours) as sum FROM hours  
+JOIN students ON hours.ID = students.ID  
+WHERE hours.date > NOW() - INTERVAL 30 DAY
+GROUP BY hours.ID;
+
+#Get hours since a certain date (the date is "datetime" format in the hours table)
+SELECT * FROM hours WHERE date > "2016-11-02 23:59:59";
+
+
+SELECT DISTINCT
