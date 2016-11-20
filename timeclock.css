@@ -14,12 +14,8 @@ body {
     margin-right: auto;
 }
 
-.title{
+.title, .main {
 	width: 350px;
-}
-
-.main  {
-    width: 350px;
 }
 
 .divbutton{
@@ -30,6 +26,9 @@ body {
 	text-align: center;
 }
 
+.left{
+	text-align: left;
+}
 h1{
 	text-align: center;
 	line-height: 20px;

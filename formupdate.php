@@ -21,12 +21,15 @@ foreach($form_fields as $field){
 		if ($id === end($_POST[$field])){$id_list['$field'] .= $id;}
 		else {$id_list['$field'] .= "$id,";}
 		}
-	echo $id_list['$field']."<br>";
+	$sql = "UPDATE students SET $field='Y' WHERE id IN ({$id_list['$field']})";
+	mysqli_query($conn,$sql);
 	}
-
-$sql = "";
 $conn->close();
 ?>
+<p>Data has been updated. Maybe.</p>
+</div>
+<div class="divbutton">
+	<a class="clickable" href="http://www.nemoquiz.com/timeclock">Go Back</a>
 </div>
 </body>
 </html>

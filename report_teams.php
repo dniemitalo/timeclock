@@ -1,39 +1,47 @@
 <!DOCTYPE html>
-<?php
-require_once 'db.php';
-?>
 <html>
 <head>
 	<meta name=viewport content="width=device-width">
 	<link rel="stylesheet" type="text/css" href="timeclock.css">
 </head>
 <body>
-<h1 class="title">Robotics Time Clock</h1>
+<h1 class="title"><a class="clickable" href="http://www.nemoquiz.com/timeclock">Robotics Time Clock</a></h1>
 <div class="main">
-<table>
-<tr><td><strong>Team</strong></td><td><strong>Last</strong></td><td><strong>First</strong></td><td><strong>Hours</strong></td></tr>
+<p>Hours this season:<p>
 <?php
-$sql = "SELECT team, last, first, SUM(hours) as sum FROM hours JOIN students ON hours.ID = students.ID WHERE students.team IN ('967','4150','4324','10107') GROUP BY hours.ID ORDER BY FIELD(students.team,'967','4150','4324','10107'), sum DESC";
-if ($result = mysqli_query($conn,$sql)){
+require_once 'db.php';
+$teams = array("967","4150","4324","10107");
+foreach ($teams as $team){
+	$sql = "SELECT team, last, first, SUM(hours) as sum FROM hours JOIN students ON hours.ID = students.ID WHERE students.team = '$team' GROUP BY hours.ID ORDER BY sum DESC";
+	if ($result = mysqli_query($conn,$sql)){
+		echo "<p><strong>Team $team</strong></p>";
+		?>
+			<table><tr>
+			<td><strong>Last</strong></td>
+			<td><strong>First</strong></td>
+			<td><strong>Hours</strong></td></tr>
+		<?php
+		$team_hours = 0;
 		while($row = mysqli_fetch_assoc($result)) 
 			{
-			echo "<tr><td>".$row['team']."</td>";
+			echo "<tr>";
 			echo "<td>".$row['last']."</td>";
 			echo "<td>".$row['first']."</td>";
-			echo "<td>".round($row['sum'],1)."</td></tr>\n";
+			echo "<td>".round($row['sum'],1)."</td>";
+			echo "</tr>\n";
+			$team_hours += $row['sum'];
 			}
-	}
-else{
-		echo mysqli_error($conn);
-	}
+		echo "</table>";
+		$team_hours = round($team_hours,1);
+		echo "<p>Total Team $team hours: $team_hours</p>";
+		}
+	else{echo mysqli_error($conn);}
+}
+mysqli_close($conn);
 ?>
-</table>
 </div>
 <div class="divbutton">
 	<a class="clickable" href="http://www.nemoquiz.com/timeclock">Go Back</a>
 </div>
 </body>
 </html>
-<?php
-$conn->close();
-?>

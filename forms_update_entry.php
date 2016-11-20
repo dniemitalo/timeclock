@@ -7,13 +7,15 @@
 <body>
 <h1 class="title">Update Forms</h1>
 <div class="main">
-<table><form action='formupdate.php' method='post'>
-<tr><th>Name</th><th>CoC</th><th>FI</th><th>UI</th></tr>
+<form action='formupdate.php' method='post'>
 <?php
-	ini_set('display_errors', 'On');
-	error_reporting(E_ALL | E_STRICT);
+	//ini_set('display_errors', 'On');
+	//error_reporting(E_ALL | E_STRICT);
 	require_once 'db.php';
-	$team = '4150';
+$teams = array("967","4150","4324","10107");
+foreach ($teams as $team){
+	echo "<h4 class='center'>Team $team</h4>\n";
+	echo "<table><tr><th class='left'>Name</th><th>CoC</th><th>FI</th><th>UI</th></tr>";
 	$sql = "SELECT id, first, last, CoC, FIRSTconsent, UofIconsent FROM students WHERE team='$team' ORDER BY last, first";
 	$result = mysqli_query($conn,$sql);
 	$form_fields = array('CoC','FIRSTconsent','UofIconsent');
@@ -24,12 +26,14 @@
 			else {$checked='';}
 			$name = $field.'[]';
 			echo "\t<td><input type='checkbox' value='{$row['id']}' name='$name' $checked></td>\n";
-		}
+			}
 		echo "</tr>\n";
+		}
+	echo "</table>";
 	}
 ?>
 <tr><td><input type="submit"></td></tr>
-</form></table>
+</form>
 </div>
 </body>
 </html>
