@@ -26,7 +26,7 @@ foreach ($teams as $team){
 	echo "<table><tr><th class='left'>Name</th><th>CoC</th><th>FI</th>";
 	if ($team != "967"){echo "<th>UI</th>";}
 	echo "</tr>";
-	$sql = "SELECT id, first, last, CoC, FIRSTconsent, UofIconsent FROM students WHERE team='$team' ORDER BY last, first";
+	$sql = "SELECT first, last, CoC, FIRSTconsent, UofIconsent FROM students WHERE team='$team' ORDER BY last, first";
 	$result = mysqli_query($conn,$sql);
 	$form_fields = array('CoC','FIRSTconsent','UofIconsent');
 	if ($team == "967"){$form_fields = array('CoC','FIRSTconsent');}
@@ -36,7 +36,7 @@ foreach ($teams as $team){
 			if ($row["$field"]=='Y') {$checked='checked';}
 			else {$checked='';}
 			$name = $field.'[]';
-			echo "\t<td><input type='checkbox' disabled='disabled' value='{$row['id']}' name='$name' $checked></td>\n";
+			echo "\t<td><input type='checkbox' disabled='disabled' $checked></td>\n";
 			}
 		echo "</tr>\n";
 		}
