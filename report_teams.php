@@ -12,7 +12,7 @@
 require_once 'db.php';
 $teams = array("967","4150","4324","10107");
 foreach ($teams as $team){
-	$sql = "SELECT team, last, first, SUM(hours) as sum FROM hours JOIN students ON hours.ID = students.ID WHERE students.team = '$team' GROUP BY hours.ID ORDER BY sum DESC";
+	$sql = "SELECT team, last, first, date, SUM(hours) as sum FROM hours JOIN students ON hours.ID = students.ID WHERE students.team = '$team' AND hours.date > "2017-08-20 01:00:00" GROUP BY hours.ID ORDER BY sum DESC";
 	if ($result = mysqli_query($conn,$sql)){
 		echo "<p><strong>Team $team</strong></p>";
 		?>
