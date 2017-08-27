@@ -13,7 +13,7 @@ require_once 'db.php';
 <table>
 <tr><td><strong>Last</strong></td><td><strong>First</strong></td><td><strong>Hours</strong></td></tr>
 <?php
-$sql = "SELECT last, first, date, SUM(hours) as sum FROM hours JOIN students ON hours.ID = students.ID AND hours.date > "2017-07-15 12:00:00" GROUP BY hours.ID ORDER BY students.last";
+$sql = "SELECT last, first, date, SUM(hours) as sum FROM hours JOIN students ON hours.ID = students.ID AND hours.date > '2017-08-19' GROUP BY hours.ID ORDER BY students.last";
 if ($result = mysqli_query($conn,$sql)){
 		while($row = mysqli_fetch_assoc($result)) 
 			{
