@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name=viewport content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="timeclock.css">
+	<script src="register2.js"></script>
+	<style>
+		input, textarea{
+			margin-left: 0;
+			margin-right: 0;
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+<h1 class="title">Registration</h1>
+<div class="main">
+	<form name="regForm" onsubmit="return validateForm()" method="post">
+		First Name: <input type="text" id="first"><br>
+		Last Name: <input type="text" id="last"><br>
+		Email: <input type="text" id="email"><br>
+		Cell: <em>(enter "none" if no cell phone)</em>
+		<input type="text" id="cell"><br>
+		<em>Contact information will be used for LM Robotics business only.</em><br>
+		<br>
+		Graduating Class<br>
+		<select id="gradclass">
+			<option>Select Graduating Class</option>
+			<option value = 2018>2018</option>
+			<option value = 2019>2019</option>
+			<option value = 2020>2020</option>
+			<option value = 2021>2021</option>
+			<option value = 2022>2022</option>
+			<option value = 2023>2023</option>
+			<option value = 2024>2024</option>
+		</select><br>
+		<br>
+		T-Shirt Size<br>
+		<select id="shirtsize">
+			<option>Select Size</option>
+			<option value="S">Small</option>
+			<option value="M">Medium</option>
+			<option value="L">Large</option>
+			<option value="XL">X-Large</option>
+			<option value="XXL">2X-Large</option>
+			<option value="XXXL">3X-Large</option>
+		</select><br>
+		</br>
+		LM ID card number: <input type="text" id="idfield" name="ID" maxlength="10" size="10"><br>
+		LM Computer Login: <input type="text" id="server_login" name="server_login" maxlength="28" size="14"><br>
+		LM Computer Password: <input type="text" id="server_password" name="server_password" maxlength="8" size="8"><br>
+		<br>
+		<strong>Parent/Guardian 1:</strong><br>
+		First Name: <input type="text" id="guardian1first"><br>
+		Last Name: <input type="text" id="guardian1last"><br>
+		Email: <input type="text" id="guardian1email"><br>
+		Cell: <input type="text" id="guardian1cell"><br>
+		<br>
+		<strong>Parent/Guardian 2 (if applicable):</strong><br>
+		First Name: <input type="text" id="guardian2first"><br>
+		Last Name: <input type="text" id="guardian2last"><br>
+		Email: <input type="text" id="guardian2email"><br>
+		Cell: <input type="text" id="guardian2cell"><br>
+		<br>
+		<strong>Availability</strong><br>
+		What other activities will you be in?
+		<textarea id="activities" rows="6"></textarea><br>
+		<br>
+		We meet <strong>Tue/Thu 7-9pm, Sat 8am-noon</strong>.<br>
+		What is your availability at those times?<br>
+		Please list recurring time conflicts.<br>
+		<textarea id="availability" rows="6"></textarea><br>
+		<br>
+		<strong>What can you bring to Linn-Mar Robotics?</strong><br>
+		Many qualities and talents can help us.<br>
+		<a href="examples.html" target="_blank">(See these examples before you answer!)</a><br>
+		<textarea id="bring" rows="12"></textarea><br>
+
+		<p><em>Experience with robots or programming is NOT required. However, we expect team members to learn, try hard, cooperate, and be positive.</em></p>
+
+		<strong>What sort of role would you like to have in Linn-Mar Robotics?</strong><br>
+		<em>(If you don't know, that is OK. We will help you figure that out based on your strengths and interests.)</em><br>
+		<textarea id="role" rows="6"></textarea><br>
+		<br>
+		<strong>FIRST program preference</strong><br>
+		<select id="preference">
+			<option value="undecided">Undecided / Don't Know</option>
+			<option value="none">No preference</option>
+			<option value="FTC">FTC (FIRST Tech Challenge)</option>
+			<option value="FRC">FRC (FIRST Robotics Competition)</option>
+		</select><br>
+		<br>
+		<strong>Preferred LM Robotics Team</strong><br>
+		<em>Indicating a team does not guarantee you a spot on that team, and it doesn't have to be your final choice.</em><br>
+		<select name="team">
+			<option value="undecided">Undecided / Don't Know</option>
+			<option value="none">No preference</option>			
+			<option value="967">967 Iron Lions (FRC)</option>
+			<option value="4150">4150 Dark Matter (FTC)</option>
+			<option value="4324">4324 Lost in Time (FTC)</option>
+			<option value="10107">10107 A League of Their Own (FTC)</option>
+		</select><br>
+		<br>
+		<input type="submit" value="Submit">
+	</form>
+</div>
+</body>
+</html>
