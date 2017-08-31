@@ -16,7 +16,7 @@
 <body>
 <h1 class="title">Registration</h1>
 <div class="main">
-	<form name="regForm" onsubmit="return validateForm()" method="post">
+	<form id="regForm" name="regForm" onsubmit="return false">
 		First Name: <input type="text" id="first"><br>
 		Last Name: <input type="text" id="last"><br>
 		Email: <input type="text" id="email"><br>
@@ -84,7 +84,7 @@
 		<textarea id="role" rows="6"></textarea><br>
 		<br>
 		<strong>FIRST program preference</strong><br>
-		<select id="preference">
+		<select id="prog_pref">
 			<option value="undecided">Undecided / Don't Know</option>
 			<option value="none">No preference</option>
 			<option value="FTC">FTC (FIRST Tech Challenge)</option>
@@ -93,7 +93,7 @@
 		<br>
 		<strong>Preferred LM Robotics Team</strong><br>
 		<em>Indicating a team does not guarantee you a spot on that team, and it doesn't have to be your final choice.</em><br>
-		<select name="team">
+		<select id="team_pref">
 			<option value="undecided">Undecided / Don't Know</option>
 			<option value="none">No preference</option>			
 			<option value="967">967 Iron Lions (FRC)</option>
@@ -102,8 +102,9 @@
 			<option value="10107">10107 A League of Their Own (FTC)</option>
 		</select><br>
 		<br>
-		<input type="submit" value="Submit">
+		<input type="submit" value="Submit" onclick="submitClicked();">
 	</form>
+	<div id="status"></div>
 </div>
 </body>
 </html>
