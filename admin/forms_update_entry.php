@@ -2,16 +2,22 @@
 <html>
 <head>
 	<meta name=viewport content="width=device-width">
-	<link rel="stylesheet" type="text/css" href="timeclock.css">
+	<link rel="stylesheet" type="text/css" href="../timeclock.css">
 </head>
 <body>
 <h1 class="title">Update Forms</h1>
 <div class="main">
 <form action='formupdate.php' method='post'>
 <?php
+if ($_POST['password'] == 'wegotpickedby2056once'){
+	echo "Welcome";
+}
+else {
+	die('Username and password not recognized.');
+}
 	//ini_set('display_errors', 'On');
 	//error_reporting(E_ALL | E_STRICT);
-	require_once 'db.php';
+require_once '../db.php';
 $teams = array("967","4150","4324","10107");
 foreach ($teams as $team){
 	echo "<h4 class='center'>Team $team</h4>\n";

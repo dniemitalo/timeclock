@@ -9,15 +9,97 @@
 <h1 class="title">Registration</h1>
 <div class="main">
 	<form name="regForm" action="register.php" onsubmit="return validateForm()" method="post">
-		LM User ID: <input type="text" id="idfield" name="ID" maxlength="10" size="10"><br>
+		LM ID card number: <input type="text" id="idfield" name="ID" maxlength="10" size="10"><br>
+		LM Server/Computer Login: <input type="text" id="server_login" name="server_login" maxlength="28" size="28"><br>
+		LM Server/Computer Password: <input type="text" id="server_password" name="server_password" maxlength="8" size="8"><br>
+		
 		First Name: <input type="text" name="first"><br>
 		Last Name: <input type="text" name="last"><br>
-		LMR Team: 
+		
+		Parent/Guardian 1:
+		First Name
+		Last Name
+		Email
+		Phone
+
+		Parent/Guardian 2 (if applicable):
+		First Name
+		Last Name
+		Email
+		Phone
+
+		Graduating Class
+		2018
+		2019
+		2020
+		2021
+		2022
+		2023
+		2024
+
+		Availability
+
+		What other activities will you be involved this year outside of class?
+
+		We meet on Tuesday and Thursday evenings (7-9 PM) and Saturday mornings (8 AM - noon).
+		What is your availability during those time slots? If you will have recurring time conflicts, please list those.
+
+		What can you bring to Linn-Mar Robotics?
+		Many different qualities and talents can help our team. Here are a bunch of examples.
+
+		Hard work
+		Positive attitude
+		Good influence on others and avoid being negatively influenced by others
+		Willingness to go outside comfort zone
+		Curiosity
+		Initiative / habit of finding work to do
+		Work well with others
+		Good at including others
+		Responsible / Reliable
+		Knack for teaching
+		Social media skills
+		Photography / videography
+		Detail oriented
+		Strategic thinking
+		Desire to make a difference
+		Compassionate toward others
+		Analytical thinking
+		Relevant coursework such as physics, engineering, computer science, or others
+		Good researcher
+		Good observer
+		Good at meeting people
+		Careful worker
+		Creative
+		Writing ability
+		Speaking ability
+		Organization skills
+		Business skills
+		Entrepreneurial mindset
+		Willingness to help with volunteer work
+		Leadership ability
+		Experience working with hand tools or power tools
+		Computer experience such as CAD, programming, Photoshop, web, or various others
+		Sense of humor
+		Ability to avoid distraction
+		Persistence
+
+		Experience with robots and programming and such is NOT required.
+		However, we expect team members to learn, try hard, cooperate, and be positive!
+
+		FIRST program preference
+		Undecided
+		No preference
+		FTC (FIRST Tech Challenge)
+		FRC (FIRST Robotics Competition)
+
+		Preferred LM Robotics Team (if applicable)<br>
+		<em>Indicating a team does not guarantee you a spot on that team, and it doesn't have to be your final choice.</em><br>
 		<select name="team">
-			<option value="967">967 Iron Lions</option>
-			<option value="4150">4150 Dark Matter</option>
-			<option value="4324">4324 Lost in Time</option>
-			<option value="10107">10107 A League of Their Own</option>
+			<option>Undecided</option>
+			<option value="967">967 Iron Lions (FRC)</option>
+			<option value="4150">4150 Dark Matter (FTC)</option>
+			<option value="4324">4324 Lost in Time (FTC)</option>
+			<option value="10107">10107 A League of Their Own (FTC)</option>
 		</select><br>
 		<input type="submit">
 	</form>

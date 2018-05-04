@@ -83,7 +83,7 @@ function validateForm() {
     
     if (!validated) {
         alert(alertmessage);
-        document.getElementById('status').innerHTML = "<p style="color:red;">"+alertmessage+"</p>";
+        document.getElementById('status').innerHTML = "<p style='color:red'>"+alertmessage+"</p>";
     }
     
     return validated;

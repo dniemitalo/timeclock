@@ -1,0 +1,79 @@
+body {
+	background-color: #990000;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 16px;
+}
+table {
+	border-collapse: collapse;
+}
+th {
+	text-align: left;
+}
+td, th {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+table, th, td {
+	border: 1px solid black;
+}
+
+.title, .main, .divbutton  {
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 25px;
+    background-color: #ffdddd;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title, .main {
+	width: 800px;
+}
+
+.divbutton{
+	width: 180px;
+}
+
+.center{
+	text-align: center;
+}
+
+.left{
+	text-align: left;
+}
+h1{
+	text-align: center;
+	line-height: 20px;
+}
+
+form {
+	font-size:18px;
+}
+
+input[type="text"], input[type="submit"]
+{
+    font-size:18px;
+}
+
+a.clickable {
+	font-size: 20px;
+	display: block;
+	text-align: center;
+	color: black;
+}
+
+.divbutton:hover {
+	background-color: #ffcccc;
+	border: 4px solid black;
+	padding: 8px;
+}
+
+a.clickable:link {
+	text-decoration: none;
+}
+
+a.clickable:visited {
+	text-decoration: none;
+	color: black;
+}

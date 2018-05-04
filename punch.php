@@ -42,7 +42,7 @@ function hours($conn, $user){
 }
 
 function accumulated_hours($conn, $user){
-	$sql = "SELECT SUM(hours) as total_hours FROM hours WHERE ID=$user";
+	$sql = "SELECT SUM(hours) as total_hours FROM hours WHERE ID=$user AND hours.date > '2017-08-19'";
 	if ($total_result = mysqli_query($conn,$sql)){ 
 		$hours = round(mysqli_fetch_row($total_result)[0],2);
 		echo "<p>You have logged a total of $hours hours this season.</p>";
@@ -56,8 +56,8 @@ if ($result = mysqli_query($conn,$sql)){
 	$names = mysqli_fetch_assoc($result); 
 	if (empty($names['first']) || empty($names['last'])) {
 		$conn->close();
-		header("location: http://www.nemoquiz.com/timeclock/reg_redirect.php?ID={$_POST['ID']}");
-		die('Redirecting to registration page.');
+		header("location: http://www.nemoquiz.com/timeclock/reg_redirect2.php?ID={$_POST['ID']}");
+		die('Redirecting back to main page.');
 	}
 	//If user is registered, proceed with punch in/out:
 	//Find the student's most recent punch that is from the current date.
